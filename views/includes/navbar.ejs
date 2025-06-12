@@ -36,10 +36,11 @@
         </ul>
         </div>
           <div class="navbar-nav ms-auto">
-            <form class="d-flex" role="search" >
-              <input class="form-control me-2 search-input" type="search" placeholder="Search destination">
-              <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass-location"></i>Search</button>
-            </form>
+            <form class="d-flex" role="search" action="/listings" method="GET">
+  <input class="form-control me-2 search-input" type="search" name="search" placeholder="Search destination" value="<%= typeof search !== 'undefined' ? search : '' %>">
+  <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass-location"></i>Search</button>
+</form>
+
           </div>
           
         
