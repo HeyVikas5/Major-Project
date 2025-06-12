@@ -1,4 +1,37 @@
 <% layout("/layouts/boilerplate.ejs") %>
+<% layout("/layouts/boilerplate.ejs") %>
+
+<style>
+  #search-bar {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  .search-input {
+    width: 60%;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    border: 1px solid #ccc;
+  }
+  .btn-search {
+    background-color: #fe424d;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+  }
+</style>
+
+<div id="search-bar">
+  <form class="d-flex" action="/listings" method="GET" style="width: 100%; justify-content: center;">
+    <input class="search-input" type="search" name="search" placeholder="Search destination" value="<%= typeof search !== 'undefined' ? search : '' %>">
+    <button class="btn-search" type="submit">
+      <i class="fa-solid fa-magnifying-glass-location"></i>&nbsp;Search
+    </button>
+  </form>
+</div>
+
   <style>
     #filters {
       display: flex;
