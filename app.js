@@ -110,7 +110,7 @@ app.get("/", (req, res) => {
     if (req.isAuthenticated()) {
         return res.redirect("/listings");
     } else {
-        return res.redirect("/register");
+        return res.redirect("/signup");
     }
 });
 
