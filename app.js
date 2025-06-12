@@ -106,6 +106,14 @@ app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews" ,reviewRouter);
 app.use("/",userRouter);
 
+app.get("/", (req, res) => {
+    if (req.isAuthenticated()) {
+        return res.redirect("/listings");
+    } else {
+        return res.redirect("/register");
+    }
+});
+
 app.all("*", (req ,res , next) => {
     next(new ExpressError(404, "Page not found!"));
 });
